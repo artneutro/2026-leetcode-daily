@@ -16,13 +16,9 @@ class Solution:
             and next_node[0].right == None :
                 # Sum up every time it reach a leaf
                 solution += int('0b'+next_node[1], 2)
-            elif next_node[0].left != None \
-            and next_node[0].right == None :
-                bfs_queue.append([next_node[0].left, next_node[1] + str(next_node[0].left.val)])
-            elif next_node[0].left == None \
-            and next_node[0].right != None :
-                bfs_queue.append([next_node[0].right, next_node[1] + str(next_node[0].right.val)])
             else :
-                bfs_queue.append([next_node[0].left, next_node[1] + str(next_node[0].left.val)])
-                bfs_queue.append([next_node[0].right, next_node[1] + str(next_node[0].right.val)])
+                if next_node[0].left != None :
+                    bfs_queue.append([next_node[0].left, next_node[1] + str(next_node[0].left.val)])
+                if next_node[0].right != None :
+                    bfs_queue.append([next_node[0].right, next_node[1] + str(next_node[0].right.val)])
         return solution
