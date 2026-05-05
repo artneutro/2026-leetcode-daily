@@ -38,5 +38,4 @@ class Solution:
             head = head.next
         head.next = cur_head
         # Assign new head as the solution
-        head = new_head
-        return head
+        return new_head
