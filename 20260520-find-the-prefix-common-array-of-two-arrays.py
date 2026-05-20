@@ -13,7 +13,9 @@ class Solution:
                 items_B[B[i]] = 1
                 if A[i] in items_B :
                     found += 1
+                    del items_B[A[i]]
                 if B[i] in items_A :
                     found += 1
+                    del items_A[B[i]]
             C.append(found)
         return C
